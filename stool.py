@@ -44,7 +44,7 @@ if len(filename) > 0:
     x = f.read()
 
 if hexConversion:
-    x = binary.stox("Hello World!")
+    x = binary.stox(x)
 
 if blocks > 0 and blocklength > 0:
     x = blockformat.blockLines(x, 8, 4)
