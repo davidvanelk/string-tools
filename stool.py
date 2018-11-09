@@ -8,8 +8,8 @@ x = str("")
 filename = str("")
 beginline = None
 endline = None
-blocks = None
-blocklength = None
+blocks = 0
+blocklength = 0
 hexConversion = False
 tabs = 0
 outfile = str("")
@@ -46,13 +46,14 @@ if len(filename) > 0:
 if hexConversion:
     x = binary.stox("Hello World!")
 
-if blocks != None and blocklength != None:
+if blocks > 0 and blocklength > 0:
     x = blockformat.blockLines(x, 8, 4)
 
 if beginline != None:
     x = lineops.appendLines(x, beginline, "")
 if endline != None:
     x = lineops.appendLines(x, "", endline)
+
 if tabs > 0:
     x = lineops.tabLines(x, tabs)
 
