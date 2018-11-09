@@ -1,8 +1,12 @@
 import binascii
 from convert import binary as binary
 from fmt import blockformat, lineops
+import sys
 
-x = binary.stox("Hallo Welt! Dies ist ein Test und dies ist auch ganz gut so!")
+for param in sys.argv:
+    print(param)
+
+x = binary.stox("Hello World!")
 x = blockformat.blockLines(x, 8, 4)
 x = lineops.appendLines(x, "\t$\"", "\"")
 
