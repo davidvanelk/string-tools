@@ -12,6 +12,7 @@ blocks = None
 blocklength = None
 hexConversion = False
 tabs = 0
+outfile = str("")
 
 for param in sys.argv[1:]:
     if not param.startswith('--'):
@@ -35,10 +36,10 @@ for param in sys.argv[1:]:
             hexConversion = True
         elif arr[0] == "tabs":
             tabs = int(arr[1])
-
-print(x)
+        elif arr[0] == "outfile":
+            outfile = arr[1]
+            
 if len(filename) > 0:
-    print(filename)
     f = open(filename, "r")
     x = f.read()
 
@@ -55,4 +56,9 @@ if endline != None:
 if tabs > 0:
     x = lineops.tabLines(x, tabs)
 
-print(x)
+if len(outfile) > 0:
+    print("Writing to " + outfile + "...")
+    f = open(outfile, "w")
+    f.write(x)
+else:
+    print(x)
