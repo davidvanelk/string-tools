@@ -1,8 +1,10 @@
 import binascii
 from convert import binary as binary
+from fmt import blockformat, lineops
 
-b = binary.stobarr("Hallo Welt!")
+x = binary.stox("Hallo Welt! Dies ist ein Test und dies ist auch ganz gut so!")
+x = blockformat.blockLines(x, 8, 4)
+x = lineops.appendLines(x, "\t$\"", "\"")
 
-print(binary.stox("Hallo Welt!"))
-
-
+for l in x:
+    print(l)

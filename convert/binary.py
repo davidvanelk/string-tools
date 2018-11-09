@@ -8,5 +8,4 @@ def stobarr (s):
 
 # Converts a string given as parameter s to a hex-encoded string
 def stox (s):
-    x = binascii.hexlify(stobarr(s))
-    return x
+    return ''.join( [ "%02X" % ord( x ) for x in s ] ).strip()
